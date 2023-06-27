@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="com.reply.liferay.exercise.model">
+	<author>s.girardello</author>
+	<namespace>GB</namespace>
+	<entity name="FuelPump" local-service="true" remote-service="true" uuid="true">
+		<!-- PK fields -->
+		<column name="fuelPumpId" primary="true" type="long"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="gasolineCapacity" type="int"></column>
+		<column name="dieselCapacity" type="int"></column>
+		<column name="cashInserted" type="int"></column>
+		<column name="guestRefuelingList" type="Collection"></column>
+		<column name="inactivityTime" type="int"></column>
+		<order by="desc">
+			<order-column name="createDate"></order-column>
+		</order>
+	</entity>
+	<exceptions>
+		<exception>FuelEndedExepttion</exception>
+		<exception>ClosedPumpExeption</exception>
+	</exceptions>
+</service-builder>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.reply.liferay.exercise.model.service.FuelPumpLocalService" class="com.reply.liferay.exercise.model.service.impl.FuelPumpLocalServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.FuelPumpService" class="com.reply.liferay.exercise.model.service.impl.FuelPumpServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.persistence.FuelPumpPersistence" class="com.reply.liferay.exercise.model.service.persistence.FuelPumpPersistenceImpl" parent="basePersistence" />
+</beans>
