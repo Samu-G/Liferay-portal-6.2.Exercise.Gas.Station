@@ -132,25 +132,45 @@ public class StazioneDiRifornimentoLocalServiceClp
 
 		_methodParameterTypes21 = new String[] { "java.lang.String" };
 
-		_methodName23 = "aggiuntaPompaDallAmministratore";
+		_methodName23 = "getPrezzoBenzina";
 
 		_methodParameterTypes23 = new String[] {  };
 
-		_methodName24 = "isStationUpAndRunning";
+		_methodName24 = "getPrezzoDiesel";
 
 		_methodParameterTypes24 = new String[] {  };
 
-		_methodName25 = "setStationUpAndRunning";
+		_methodName25 = "aggiungiDenaro";
 
-		_methodParameterTypes25 = new String[] { "boolean" };
+		_methodParameterTypes25 = new String[] { "int" };
 
-		_methodName26 = "setPrezzoBenzina";
+		_methodName26 = "getDenaro";
 
-		_methodParameterTypes26 = new String[] { "float" };
+		_methodParameterTypes26 = new String[] {  };
 
-		_methodName27 = "setPrezzoDiesel";
+		_methodName27 = "reset";
 
-		_methodParameterTypes27 = new String[] { "float" };
+		_methodParameterTypes27 = new String[] {  };
+
+		_methodName28 = "aggiuntaPompaDallAmministratore";
+
+		_methodParameterTypes28 = new String[] {  };
+
+		_methodName29 = "isStationUpAndRunning";
+
+		_methodParameterTypes29 = new String[] {  };
+
+		_methodName30 = "setStationUpAndRunning";
+
+		_methodParameterTypes30 = new String[] { "boolean" };
+
+		_methodName31 = "setPrezzoBenzina";
+
+		_methodParameterTypes31 = new String[] { "float" };
+
+		_methodName32 = "setPrezzoDiesel";
+
+		_methodParameterTypes32 = new String[] { "float" };
 	}
 
 	@Override
@@ -844,10 +864,117 @@ public class StazioneDiRifornimentoLocalServiceClp
 	}
 
 	@Override
+	public java.lang.String getPrezzoBenzina() {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName23,
+					_methodParameterTypes23, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.lang.String getPrezzoDiesel() {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName24,
+					_methodParameterTypes24, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public void aggiungiDenaro(int denaroDaAggiungere) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName25,
+				_methodParameterTypes25, new Object[] { denaroDaAggiungere });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public java.lang.String getDenaro() {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.lang.String)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public void reset() {
+		try {
+			_invokableLocalService.invokeMethod(_methodName27,
+				_methodParameterTypes27, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
 	public void aggiuntaPompaDallAmministratore() {
 		try {
-			_invokableLocalService.invokeMethod(_methodName23,
-				_methodParameterTypes23, new Object[] {  });
+			_invokableLocalService.invokeMethod(_methodName28,
+				_methodParameterTypes28, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -867,8 +994,8 @@ public class StazioneDiRifornimentoLocalServiceClp
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName24,
-					_methodParameterTypes24, new Object[] {  });
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -888,8 +1015,8 @@ public class StazioneDiRifornimentoLocalServiceClp
 	@Override
 	public void setStationUpAndRunning(boolean stationUpAndRunning) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName25,
-				_methodParameterTypes25, new Object[] { stationUpAndRunning });
+			_invokableLocalService.invokeMethod(_methodName30,
+				_methodParameterTypes30, new Object[] { stationUpAndRunning });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -907,8 +1034,8 @@ public class StazioneDiRifornimentoLocalServiceClp
 	@Override
 	public void setPrezzoBenzina(float prezzoBenzina) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName26,
-				_methodParameterTypes26, new Object[] { prezzoBenzina });
+			_invokableLocalService.invokeMethod(_methodName31,
+				_methodParameterTypes31, new Object[] { prezzoBenzina });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -926,8 +1053,8 @@ public class StazioneDiRifornimentoLocalServiceClp
 	@Override
 	public void setPrezzoDiesel(float prezzoDiesel) {
 		try {
-			_invokableLocalService.invokeMethod(_methodName27,
-				_methodParameterTypes27, new Object[] { prezzoDiesel });
+			_invokableLocalService.invokeMethod(_methodName32,
+				_methodParameterTypes32, new Object[] { prezzoDiesel });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -997,4 +1124,14 @@ public class StazioneDiRifornimentoLocalServiceClp
 	private String[] _methodParameterTypes26;
 	private String _methodName27;
 	private String[] _methodParameterTypes27;
+	private String _methodName28;
+	private String[] _methodParameterTypes28;
+	private String _methodName29;
+	private String[] _methodParameterTypes29;
+	private String _methodName30;
+	private String[] _methodParameterTypes30;
+	private String _methodName31;
+	private String[] _methodParameterTypes31;
+	private String _methodName32;
+	private String[] _methodParameterTypes32;
 }

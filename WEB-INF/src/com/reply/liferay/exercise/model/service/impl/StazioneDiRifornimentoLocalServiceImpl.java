@@ -16,6 +16,7 @@ package com.reply.liferay.exercise.model.service.impl;
 import com.reply.liferay.exercise.model.model.Pompa;
 import com.reply.liferay.exercise.model.service.base.StazioneDiRifornimentoLocalServiceBaseImpl;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -44,7 +45,38 @@ public class StazioneDiRifornimentoLocalServiceImpl
 	
 	private boolean stationUpAndRunning;
 	private static int [] banconoteAccettate;
-	private static List<Pompa> pompeInstallate; 
+	private static List<Pompa> pompeInstallate;
+	private String prezzoBenzina = "2,145 euro"; 
+	private String prezzoDiesel = "1,998 euro";
+	private int denaroAggiunto;
+	
+	public String getPrezzoBenzina() {
+		return prezzoBenzina;
+	}
+	
+	public String getPrezzoDiesel() {
+		return prezzoDiesel;
+	}
+	
+	public void aggiungiDenaro(int denaroDaAggiungere) {
+		int [] banconoteAccettate = new int [] {5, 10, 20, 50, 100};
+		if(Arrays.asList(banconoteAccettate).contains(denaroDaAggiungere)) {
+			
+		} else {
+			System.out.println("Banconota non supportata");
+		}
+		
+	}
+	
+	public String getDenaro() {
+		return Integer.toString(denaroAggiunto);
+	}
+
+	public void reset() {
+		int denaro = denaroAggiunto;
+		denaroAggiunto = 0;
+		System.out.println(denaro + " - > Denaro restituito al cliente");
+	}
 	
 	public void aggiuntaPompaDallAmministratore () {
 		
@@ -76,14 +108,13 @@ public class StazioneDiRifornimentoLocalServiceImpl
 
 	@Override
 	public void setPrezzoBenzina(float prezzoBenzina) {
-		StazioneDiRifornimentoPersistenceImpl.
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void setPrezzoDiesel(float prezzoDiesel) {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
 }

@@ -130,41 +130,61 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 
 		_methodParameterTypes51 = new String[] { "java.lang.String" };
 
-		_methodName56 = "aggiuntaPompaDallAmministratore";
+		_methodName56 = "getPrezzoBenzina";
 
 		_methodParameterTypes56 = new String[] {  };
 
-		_methodName57 = "isStationUpAndRunning";
+		_methodName57 = "getPrezzoDiesel";
 
 		_methodParameterTypes57 = new String[] {  };
 
-		_methodName58 = "setStationUpAndRunning";
+		_methodName58 = "aggiungiDenaro";
 
-		_methodParameterTypes58 = new String[] { "boolean" };
+		_methodParameterTypes58 = new String[] { "int" };
 
-		_methodName59 = "getBanconoteAccettate";
+		_methodName59 = "getDenaro";
 
 		_methodParameterTypes59 = new String[] {  };
 
-		_methodName60 = "setBanconoteAccettate";
+		_methodName60 = "reset";
 
-		_methodParameterTypes60 = new String[] { "int[][]" };
+		_methodParameterTypes60 = new String[] {  };
 
-		_methodName61 = "getPompeInstallate";
+		_methodName61 = "aggiuntaPompaDallAmministratore";
 
 		_methodParameterTypes61 = new String[] {  };
 
-		_methodName62 = "setPompeInstallate";
+		_methodName62 = "isStationUpAndRunning";
 
-		_methodParameterTypes62 = new String[] { "java.util.List" };
+		_methodParameterTypes62 = new String[] {  };
 
-		_methodName63 = "setPrezzoBenzina";
+		_methodName63 = "setStationUpAndRunning";
 
-		_methodParameterTypes63 = new String[] { "float" };
+		_methodParameterTypes63 = new String[] { "boolean" };
 
-		_methodName64 = "setPrezzoDiesel";
+		_methodName64 = "getBanconoteAccettate";
 
-		_methodParameterTypes64 = new String[] { "float" };
+		_methodParameterTypes64 = new String[] {  };
+
+		_methodName65 = "setBanconoteAccettate";
+
+		_methodParameterTypes65 = new String[] { "int[][]" };
+
+		_methodName66 = "getPompeInstallate";
+
+		_methodParameterTypes66 = new String[] {  };
+
+		_methodName67 = "setPompeInstallate";
+
+		_methodParameterTypes67 = new String[] { "java.util.List" };
+
+		_methodName68 = "setPrezzoBenzina";
+
+		_methodParameterTypes68 = new String[] { "float" };
+
+		_methodName69 = "setPrezzoDiesel";
+
+		_methodParameterTypes69 = new String[] { "float" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -294,56 +314,85 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 
 		if (_methodName56.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.aggiuntaPompaDallAmministratore();
-
-			return null;
+			return StazioneDiRifornimentoLocalServiceUtil.getPrezzoBenzina();
 		}
 
 		if (_methodName57.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.isStationUpAndRunning();
+			return StazioneDiRifornimentoLocalServiceUtil.getPrezzoDiesel();
 		}
 
 		if (_methodName58.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setStationUpAndRunning(((Boolean)arguments[0]).booleanValue());
+			StazioneDiRifornimentoLocalServiceUtil.aggiungiDenaro(((Integer)arguments[0]).intValue());
 
 			return null;
 		}
 
 		if (_methodName59.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getBanconoteAccettate();
+			return StazioneDiRifornimentoLocalServiceUtil.getDenaro();
 		}
 
 		if (_methodName60.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setBanconoteAccettate((int[])arguments[0]);
+			StazioneDiRifornimentoLocalServiceUtil.reset();
 
 			return null;
 		}
 
 		if (_methodName61.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes61, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getPompeInstallate();
-		}
-
-		if (_methodName62.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setPompeInstallate((java.util.List<com.reply.liferay.exercise.model.model.Pompa>)arguments[0]);
+			StazioneDiRifornimentoLocalServiceUtil.aggiuntaPompaDallAmministratore();
 
 			return null;
 		}
 
+		if (_methodName62.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
+			return StazioneDiRifornimentoLocalServiceUtil.isStationUpAndRunning();
+		}
+
 		if (_methodName63.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes63, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setPrezzoBenzina(((Float)arguments[0]).floatValue());
+			StazioneDiRifornimentoLocalServiceUtil.setStationUpAndRunning(((Boolean)arguments[0]).booleanValue());
 
 			return null;
 		}
 
 		if (_methodName64.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
+			return StazioneDiRifornimentoLocalServiceUtil.getBanconoteAccettate();
+		}
+
+		if (_methodName65.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
+			StazioneDiRifornimentoLocalServiceUtil.setBanconoteAccettate((int[])arguments[0]);
+
+			return null;
+		}
+
+		if (_methodName66.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
+			return StazioneDiRifornimentoLocalServiceUtil.getPompeInstallate();
+		}
+
+		if (_methodName67.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes67, parameterTypes)) {
+			StazioneDiRifornimentoLocalServiceUtil.setPompeInstallate((java.util.List<com.reply.liferay.exercise.model.model.Pompa>)arguments[0]);
+
+			return null;
+		}
+
+		if (_methodName68.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+			StazioneDiRifornimentoLocalServiceUtil.setPrezzoBenzina(((Float)arguments[0]).floatValue());
+
+			return null;
+		}
+
+		if (_methodName69.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes69, parameterTypes)) {
 			StazioneDiRifornimentoLocalServiceUtil.setPrezzoDiesel(((Float)arguments[0]).floatValue());
 
 			return null;
@@ -414,4 +463,14 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes63;
 	private String _methodName64;
 	private String[] _methodParameterTypes64;
+	private String _methodName65;
+	private String[] _methodParameterTypes65;
+	private String _methodName66;
+	private String[] _methodParameterTypes66;
+	private String _methodName67;
+	private String[] _methodParameterTypes67;
+	private String _methodName68;
+	private String[] _methodParameterTypes68;
+	private String _methodName69;
+	private String[] _methodParameterTypes69;
 }

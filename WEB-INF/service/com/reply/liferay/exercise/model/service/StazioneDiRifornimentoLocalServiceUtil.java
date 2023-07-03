@@ -342,6 +342,26 @@ public class StazioneDiRifornimentoLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.lang.String getPrezzoBenzina() {
+		return getService().getPrezzoBenzina();
+	}
+
+	public static java.lang.String getPrezzoDiesel() {
+		return getService().getPrezzoDiesel();
+	}
+
+	public static void aggiungiDenaro(int denaroDaAggiungere) {
+		getService().aggiungiDenaro(denaroDaAggiungere);
+	}
+
+	public static java.lang.String getDenaro() {
+		return getService().getDenaro();
+	}
+
+	public static void reset() {
+		getService().reset();
+	}
+
 	public static void aggiuntaPompaDallAmministratore() {
 		getService().aggiuntaPompaDallAmministratore();
 	}

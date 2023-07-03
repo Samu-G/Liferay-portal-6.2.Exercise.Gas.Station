@@ -359,6 +359,31 @@ public class StazioneDiRifornimentoLocalServiceWrapper
 	}
 
 	@Override
+	public java.lang.String getPrezzoBenzina() {
+		return _stazioneDiRifornimentoLocalService.getPrezzoBenzina();
+	}
+
+	@Override
+	public java.lang.String getPrezzoDiesel() {
+		return _stazioneDiRifornimentoLocalService.getPrezzoDiesel();
+	}
+
+	@Override
+	public void aggiungiDenaro(int denaroDaAggiungere) {
+		_stazioneDiRifornimentoLocalService.aggiungiDenaro(denaroDaAggiungere);
+	}
+
+	@Override
+	public java.lang.String getDenaro() {
+		return _stazioneDiRifornimentoLocalService.getDenaro();
+	}
+
+	@Override
+	public void reset() {
+		_stazioneDiRifornimentoLocalService.reset();
+	}
+
+	@Override
 	public void aggiuntaPompaDallAmministratore() {
 		_stazioneDiRifornimentoLocalService.aggiuntaPompaDallAmministratore();
 	}

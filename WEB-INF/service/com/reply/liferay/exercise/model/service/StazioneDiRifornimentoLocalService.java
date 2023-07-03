@@ -310,6 +310,19 @@ public interface StazioneDiRifornimentoLocalService extends BaseLocalService,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.lang.String getPrezzoBenzina();
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.lang.String getPrezzoDiesel();
+
+	public void aggiungiDenaro(int denaroDaAggiungere);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.lang.String getDenaro();
+
+	public void reset();
+
 	public void aggiuntaPompaDallAmministratore();
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

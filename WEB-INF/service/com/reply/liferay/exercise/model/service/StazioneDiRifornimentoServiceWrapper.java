@@ -59,31 +59,6 @@ public class StazioneDiRifornimentoServiceWrapper
 			parameterTypes, arguments);
 	}
 
-	@Override
-	public java.lang.String getPrezzoBenzina() {
-		return _stazioneDiRifornimentoService.getPrezzoBenzina();
-	}
-
-	@Override
-	public java.lang.String getPrezzoDiesel() {
-		return _stazioneDiRifornimentoService.getPrezzoDiesel();
-	}
-
-	@Override
-	public void aggiungiDenaro(int denaroDaAggiungere) {
-		_stazioneDiRifornimentoService.aggiungiDenaro(denaroDaAggiungere);
-	}
-
-	@Override
-	public java.lang.String getDenaro() {
-		return _stazioneDiRifornimentoService.getDenaro();
-	}
-
-	@Override
-	public void reset() {
-		_stazioneDiRifornimentoService.reset();
-	}
-
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
