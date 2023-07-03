@@ -287,11 +287,14 @@ public class RifornimentoLocalServiceWrapper implements RifornimentoLocalService
 			arguments);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public boolean sbloccaRifornimento() {
 		return _rifornimentoLocalService.sbloccaRifornimento();
 	}
 
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

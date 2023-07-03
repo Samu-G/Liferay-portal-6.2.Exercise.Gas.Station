@@ -14,12 +14,15 @@
 
 package com.reply.liferay.exercise.model.service.impl;
 
+<<<<<<< HEAD
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.reply.liferay.exercise.model.model.Pompa;
 import com.reply.liferay.exercise.model.model.Rifornimento;
 import com.reply.liferay.exercise.model.service.PompaLocalService;
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 import com.reply.liferay.exercise.model.service.base.RifornimentoLocalServiceBaseImpl;
 
 /**
@@ -43,6 +46,7 @@ public class RifornimentoLocalServiceImpl
 	 *
 	 * Never reference this interface directly. Always use {@link com.reply.liferay.exercise.model.service.RifornimentoLocalServiceUtil} to access the rifornimento local service.
 	 */
+<<<<<<< HEAD
 	
 	private boolean test;
 	
@@ -69,4 +73,6 @@ public class RifornimentoLocalServiceImpl
 		return test;
 	}
 	
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 }

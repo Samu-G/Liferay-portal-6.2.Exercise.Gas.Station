@@ -114,10 +114,13 @@ public class RifornimentoLocalServiceClp implements RifornimentoLocalService {
 		_methodName17 = "setBeanIdentifier";
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
+<<<<<<< HEAD
 
 		_methodName19 = "sbloccaRifornimento";
 
 		_methodParameterTypes19 = new String[] {  };
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 	}
 
 	@Override
@@ -670,6 +673,7 @@ public class RifornimentoLocalServiceClp implements RifornimentoLocalService {
 		throw new UnsupportedOperationException();
 	}
 
+<<<<<<< HEAD
 	@Override
 	public boolean sbloccaRifornimento() {
 		Object returnObj = null;
@@ -693,6 +697,8 @@ public class RifornimentoLocalServiceClp implements RifornimentoLocalService {
 		return ((Boolean)returnObj).booleanValue();
 	}
 
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -730,6 +736,9 @@ public class RifornimentoLocalServiceClp implements RifornimentoLocalService {
 	private String[] _methodParameterTypes16;
 	private String _methodName17;
 	private String[] _methodParameterTypes17;
+<<<<<<< HEAD
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 }

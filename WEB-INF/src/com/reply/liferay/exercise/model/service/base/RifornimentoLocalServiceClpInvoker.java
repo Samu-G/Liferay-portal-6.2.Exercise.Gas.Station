@@ -113,6 +113,7 @@ public class RifornimentoLocalServiceClpInvoker {
 		_methodName47 = "setBeanIdentifier";
 
 		_methodParameterTypes47 = new String[] { "java.lang.String" };
+<<<<<<< HEAD
 
 		_methodName52 = "addRifornimento";
 
@@ -127,6 +128,8 @@ public class RifornimentoLocalServiceClpInvoker {
 		_methodName55 = "sbloccaRifornimento";
 
 		_methodParameterTypes55 = new String[] {  };
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -230,6 +233,7 @@ public class RifornimentoLocalServiceClpInvoker {
 			return null;
 		}
 
+<<<<<<< HEAD
 		if (_methodName52.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
 			return RifornimentoLocalServiceUtil.addRifornimento((com.reply.liferay.exercise.model.model.Rifornimento)arguments[0]);
@@ -245,6 +249,8 @@ public class RifornimentoLocalServiceClpInvoker {
 			return RifornimentoLocalServiceUtil.sbloccaRifornimento();
 		}
 
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 		throw new UnsupportedOperationException();
 	}
 
@@ -284,10 +290,13 @@ public class RifornimentoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes46;
 	private String _methodName47;
 	private String[] _methodParameterTypes47;
+<<<<<<< HEAD
 	private String _methodName52;
 	private String[] _methodParameterTypes52;
 	private String _methodName53;
 	private String[] _methodParameterTypes53;
 	private String _methodName55;
 	private String[] _methodParameterTypes55;
+=======
+>>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 }
