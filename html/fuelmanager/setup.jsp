@@ -69,11 +69,20 @@
 <%@ page import="com.liferay.portal.kernel.util.Validator" %>
 <%@ page import="com.liferay.portal.util.PortalUtil" %>
 
+<!-- #my imports -->
+<%@ page import="com.reply.liferay.exercise.model.model.Pompa" %>
+<%@ page import="com.reply.liferay.exercise.model.model.Rifornimento" %>
+<%@ page import="com.reply.liferay.exercise.model.model.StazioneDiRifornimento" %>
+<%@ page import="com.reply.liferay.exercise.model.service.impl.PompaLocalServiceImpl" %>
+<%@ page import="com.reply.liferay.exercise.model.service.impl.RifornimentoServiceImpl" %>
+<%@ page import="com.reply.liferay.exercise.model.service.impl.StazioneDiRifornimentoServiceImpl" %>
+<!-- #end -->
+
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %>
 
 <%@ page import="javax.portlet.PortletURL" %>
 
-<portlet:defineObjects />
 <theme:defineObjects />
+<portlet:defineObjects />

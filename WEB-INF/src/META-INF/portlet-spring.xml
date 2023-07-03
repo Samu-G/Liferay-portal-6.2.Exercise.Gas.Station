@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<bean id="com.reply.liferay.exercise.model.service.FuelPumpLocalService" class="com.reply.liferay.exercise.model.service.impl.FuelPumpLocalServiceImpl" />
-	<bean id="com.reply.liferay.exercise.model.service.FuelPumpService" class="com.reply.liferay.exercise.model.service.impl.FuelPumpServiceImpl" />
-	<bean id="com.reply.liferay.exercise.model.service.persistence.FuelPumpPersistence" class="com.reply.liferay.exercise.model.service.persistence.FuelPumpPersistenceImpl" parent="basePersistence" />
+	<bean id="com.reply.liferay.exercise.model.service.PompaLocalService" class="com.reply.liferay.exercise.model.service.impl.PompaLocalServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.PompaService" class="com.reply.liferay.exercise.model.service.impl.PompaServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.persistence.PompaPersistence" class="com.reply.liferay.exercise.model.service.persistence.PompaPersistenceImpl" parent="basePersistence" />
+	<bean id="com.reply.liferay.exercise.model.service.RifornimentoLocalService" class="com.reply.liferay.exercise.model.service.impl.RifornimentoLocalServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.RifornimentoService" class="com.reply.liferay.exercise.model.service.impl.RifornimentoServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.persistence.RifornimentoPersistence" class="com.reply.liferay.exercise.model.service.persistence.RifornimentoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.reply.liferay.exercise.model.service.StazioneDiRifornimentoLocalService" class="com.reply.liferay.exercise.model.service.impl.StazioneDiRifornimentoLocalServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.StazioneDiRifornimentoService" class="com.reply.liferay.exercise.model.service.impl.StazioneDiRifornimentoServiceImpl" />
+	<bean id="com.reply.liferay.exercise.model.service.persistence.StazioneDiRifornimentoPersistence" class="com.reply.liferay.exercise.model.service.persistence.StazioneDiRifornimentoPersistenceImpl" parent="basePersistence" />
 </beans>

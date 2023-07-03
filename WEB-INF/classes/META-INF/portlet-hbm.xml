@@ -2,10 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
-	<import class="com.reply.liferay.exercise.model.model.FuelPump" />
-	<class name="com.reply.liferay.exercise.model.model.impl.FuelPumpImpl" table="GB_FuelPump">
+	<import class="com.reply.liferay.exercise.model.model.Pompa" />
+	<import class="com.reply.liferay.exercise.model.model.Rifornimento" />
+	<import class="com.reply.liferay.exercise.model.model.StazioneDiRifornimento" />
+	<class name="com.reply.liferay.exercise.model.model.impl.PompaImpl" table="SG_Pompa">
 		<cache usage="read-write" />
-		<id name="fuelPumpId" type="long">
+		<id name="pompaId" type="long">
 			<generator class="assigned" />
 		</id>
 		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
@@ -15,9 +17,38 @@
 		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
-		<property name="gasolineCapacity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
-		<property name="dieselCapacity" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
-		<property name="cashInserted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
-		<property name="inactivityTime" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="quantitaDiesel" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="quantitaBenzina" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="tempoGiacenza" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="incassoTotalePompa" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statoPompa" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.reply.liferay.exercise.model.model.impl.RifornimentoImpl" table="SG_Rifornimento">
+		<cache usage="read-write" />
+		<id name="rifornimentoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="tipoCarburante" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="denaroInserito" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="pompaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.reply.liferay.exercise.model.model.impl.StazioneDiRifornimentoImpl" table="SG_StazioneDiRifornimento">
+		<cache usage="read-write" />
+		<id name="stazioneDiRifornimentoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
 </hibernate-mapping>

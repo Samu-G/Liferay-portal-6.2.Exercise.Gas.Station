@@ -18,8 +18,12 @@ import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
 import com.reply.liferay.exercise.model.service.ClpSerializer;
-import com.reply.liferay.exercise.model.service.FuelPumpLocalServiceUtil;
-import com.reply.liferay.exercise.model.service.FuelPumpServiceUtil;
+import com.reply.liferay.exercise.model.service.PompaLocalServiceUtil;
+import com.reply.liferay.exercise.model.service.PompaServiceUtil;
+import com.reply.liferay.exercise.model.service.RifornimentoLocalServiceUtil;
+import com.reply.liferay.exercise.model.service.RifornimentoServiceUtil;
+import com.reply.liferay.exercise.model.service.StazioneDiRifornimentoLocalServiceUtil;
+import com.reply.liferay.exercise.model.service.StazioneDiRifornimentoServiceUtil;
 
 /**
  * @author s.girardello
@@ -36,9 +40,15 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
-			FuelPumpLocalServiceUtil.clearService();
+			PompaLocalServiceUtil.clearService();
 
-			FuelPumpServiceUtil.clearService();
+			PompaServiceUtil.clearService();
+			RifornimentoLocalServiceUtil.clearService();
+
+			RifornimentoServiceUtil.clearService();
+			StazioneDiRifornimentoLocalServiceUtil.clearService();
+
+			StazioneDiRifornimentoServiceUtil.clearService();
 		}
 	}
 }

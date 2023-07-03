@@ -3,10 +3,10 @@
 
 <service-builder package-path="com.reply.liferay.exercise.model">
 	<author>s.girardello</author>
-	<namespace>GB</namespace>
-	<entity name="FuelPump" local-service="true" remote-service="true" uuid="true">
+	<namespace>SG</namespace>
+	<entity local-service="true" name="StazioneDiRifornimento" remote-service="true" uuid="true">
 		<!-- PK fields -->
-		<column name="fuelPumpId" primary="true" type="long"></column>
+		<column name="stazioneDiRifornimentoId" primary="true" type="long"></column>
 		<!-- Group instance -->
 		<column name="groupId" type="long"></column>
 		<!-- Audit fields -->
@@ -15,17 +15,44 @@
 		<column name="userName" type="String"></column>
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
-		<column name="gasolineCapacity" type="int"></column>
-		<column name="dieselCapacity" type="int"></column>
-		<column name="cashInserted" type="int"></column>
-		<column name="guestRefuelingList" type="Collection"></column>
-		<column name="inactivityTime" type="int"></column>
-		<order by="desc">
-			<order-column name="createDate"></order-column>
-		</order>
+		<column name="pompeDisponibili" type="Collection"></column>
 	</entity>
-	<exceptions>
-		<exception>FuelEndedExepttion</exception>
-		<exception>ClosedPumpExeption</exception>
-	</exceptions>
+	<entity name="Rifornimento" local-service="true">
+		<!-- PK fields -->
+		<column name="rifornimentoId" primary="true" type="long"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- PK fields -->
+		<!-- Group instance -->
+		<!-- Audit fields -->
+		<!-- PK fields -->
+		<!-- Group instance -->
+		<!-- Audit fields -->
+		<column name="tipoCarburante" type="String"></column>
+		<column name="denaroInserito" type="int"></column>
+		<column name="pompaId" type="long"></column>
+	</entity>
+	<entity name="Pompa" local-service="true" uuid="true">
+		<!-- PK fields -->
+		<column name="pompaId" primary="true" type="long"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="quantitaDiesel" type="int"></column>
+		<column name="quantitaBenzina" type="int"></column>
+		<column name="tempoGiacenza" type="int"></column>
+		<column name="incassoTotalePompa" type="int"></column>
+		<column name="statoPompa" type="boolean"></column>
+	</entity>
 </service-builder>

@@ -1,18 +1,41 @@
 <?xml version="1.0"?>
 
 <model-hints>
-	<model name="com.reply.liferay.exercise.model.model.FuelPump">
+	<model name="com.reply.liferay.exercise.model.model.Pompa">
 		<field name="uuid" type="String" />
-		<field name="fuelPumpId" type="long" />
+		<field name="pompaId" type="long" />
 		<field name="groupId" type="long" />
 		<field name="companyId" type="long" />
 		<field name="userId" type="long" />
 		<field name="userName" type="String" />
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
-		<field name="gasolineCapacity" type="int" />
-		<field name="dieselCapacity" type="int" />
-		<field name="cashInserted" type="int" />
-		<field name="inactivityTime" type="int" />
+		<field name="quantitaDiesel" type="int" />
+		<field name="quantitaBenzina" type="int" />
+		<field name="tempoGiacenza" type="int" />
+		<field name="incassoTotalePompa" type="int" />
+		<field name="statoPompa" type="boolean" />
+	</model>
+	<model name="com.reply.liferay.exercise.model.model.Rifornimento">
+		<field name="rifornimentoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="tipoCarburante" type="String" />
+		<field name="denaroInserito" type="int" />
+		<field name="pompaId" type="long" />
+	</model>
+	<model name="com.reply.liferay.exercise.model.model.StazioneDiRifornimento">
+		<field name="uuid" type="String" />
+		<field name="stazioneDiRifornimentoId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
 	</model>
 </model-hints>

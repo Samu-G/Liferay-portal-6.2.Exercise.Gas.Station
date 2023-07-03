@@ -1,95 +1,46 @@
 <%@ include file="/html/fuelmanager/setup.jsp"%>
 
-<%
-	int contatore = 0; // Dichiarazione e inizializzazione del contatore
-%>
+<portlet:renderURL var="PumpURL">
+	<portlet:param name="mvcPath"
+		value="/html/fuelmanager/seleziona-pompa.jsp" />
+</portlet:renderURL>
 
-<script>
+<portlet:actionURL name="faiRifornimento" var="faiRifornimentoURL"></portlet:actionURL>
 
-	function increment(n) {
-		counter = counter + n;
-	}
 
-	function azzera() {
-		counter = 0;
-	}
+<aui:form action="<%=faiRifornimentoURL%>" name="<portlet:namespace />fm">
 
-	function checkDigit(m) {
-		if(m == 5) {
-			counter += 5;
-			contatore = counter;
-			break;
-		}
-		if(m == 10) {
-			counter += 10;
-			contatore = counter;
-			break;
-		}
-		if(m == 20) {
-			counter += 20;
-			contatore = counter;
-			break;
-		}
-		if(m == 50){
-			counter += 50;
-			contatore = counter;
-			break;
-		}
-		if (m == 100) {
-			counter += 100;
-			contatore = counter;
-			break;
-		}
-		else {
-			counter += 0;
-		    alert("Sono accettate solo banconote da 5 10 20 50 100");
-		    break;
-		}
-	}
-	
-	function getConter() {
-		return conuter;
-	}
-</script>
-</body>
-
-<aui:form name="fm">
 	<aui:fieldset label="Rifornimento">
+
 		<aui:row>
-			<aui:col width="33">
-				<aui:input name="inserisci la cifra">
-					<aui:validator name="digit">
-						<aui:input name="inserisci qui il denaro" onChange="checkDigit(m)"></aui:input>
-					</aui:validator>
-				</aui:input>
-
-
-			</aui:col>
-			<aui:col width="33">
-
-
-				<portlet:renderURL var="PumpURL">
-					<portlet:param name="mvcPath"
-						value="/html/fuelmanager/seleziona-pompa.jsp" />
-				</portlet:renderURL>
-
-				<aui:button onClick="<%=PumpURL.toString()%>"
-					value="AGGIUNGI LA CIFRA" />
-					
-					
-				<aui:button onClick="<%=PumpURL.toString()%>"
-					value="Prosegui con la selezione della pompa" />
-
-			</aui:col>
+			<p>Inserisci Qui Il Denaro:</p>
+			<p>Sono accettate solo banconote da 5, 10, 20, 50, 100 Euro</p>
 		</aui:row>
 
+		<aui:row>
+			<aui:input name="input numero">
+				<aui:validator name="digit" />
+			</aui:input>
+			<aui:input id="mnyInserted" disabled="true" name="valore inserito"
+				readonly="true" onchange="checkDigit(this.value)" />
+		</aui:row>
 
-		<aui:col width="33">
-			<aui:input disabled="true" name="valore inserito"
-				value='returnCounter()' readonly='true'></aui:input>
+		<aui:button-row cssClass="aui-buttons">
+			<aui:row>
+				<aui:button
+					onclick="checkDigit(parseInt(document.getElementsById('mnyInserted')[0].value))"
+					value="Aggiungi la cifra" />
+				<aui:button onclick="azzera()" value="Azzera e restituisci denaro" />
+			
+				<aui:input onclick="faiRifornimentoURL" name="Prosegui con la selezione della pompa" type="submit" />
+			</aui:row>
+		</aui:button-row>
 
-		</aui:col>
 	</aui:fieldset>
 </aui:form>
-</body>
 
+<!-- logic FE -->
+
+<script type="text/javascript">
+	
+</script>

@@ -25,7 +25,9 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
-import com.reply.liferay.exercise.model.model.FuelPumpClp;
+import com.reply.liferay.exercise.model.model.PompaClp;
+import com.reply.liferay.exercise.model.model.RifornimentoClp;
+import com.reply.liferay.exercise.model.model.StazioneDiRifornimentoClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -102,8 +104,16 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
-		if (oldModelClassName.equals(FuelPumpClp.class.getName())) {
-			return translateInputFuelPump(oldModel);
+		if (oldModelClassName.equals(PompaClp.class.getName())) {
+			return translateInputPompa(oldModel);
+		}
+
+		if (oldModelClassName.equals(RifornimentoClp.class.getName())) {
+			return translateInputRifornimento(oldModel);
+		}
+
+		if (oldModelClassName.equals(StazioneDiRifornimentoClp.class.getName())) {
+			return translateInputStazioneDiRifornimento(oldModel);
 		}
 
 		return oldModel;
@@ -121,10 +131,31 @@ public class ClpSerializer {
 		return newList;
 	}
 
-	public static Object translateInputFuelPump(BaseModel<?> oldModel) {
-		FuelPumpClp oldClpModel = (FuelPumpClp)oldModel;
+	public static Object translateInputPompa(BaseModel<?> oldModel) {
+		PompaClp oldClpModel = (PompaClp)oldModel;
 
-		BaseModel<?> newModel = oldClpModel.getFuelPumpRemoteModel();
+		BaseModel<?> newModel = oldClpModel.getPompaRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputRifornimento(BaseModel<?> oldModel) {
+		RifornimentoClp oldClpModel = (RifornimentoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getRifornimentoRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputStazioneDiRifornimento(
+		BaseModel<?> oldModel) {
+		StazioneDiRifornimentoClp oldClpModel = (StazioneDiRifornimentoClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getStazioneDiRifornimentoRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -149,8 +180,82 @@ public class ClpSerializer {
 		String oldModelClassName = oldModelClass.getName();
 
 		if (oldModelClassName.equals(
-					"com.reply.liferay.exercise.model.model.impl.FuelPumpImpl")) {
-			return translateOutputFuelPump(oldModel);
+					"com.reply.liferay.exercise.model.model.impl.PompaImpl")) {
+			return translateOutputPompa(oldModel);
+		}
+		else if (oldModelClassName.endsWith("Clp")) {
+			try {
+				ClassLoader classLoader = ClpSerializer.class.getClassLoader();
+
+				Method getClpSerializerClassMethod = oldModelClass.getMethod(
+						"getClpSerializerClass");
+
+				Class<?> oldClpSerializerClass = (Class<?>)getClpSerializerClassMethod.invoke(oldModel);
+
+				Class<?> newClpSerializerClass = classLoader.loadClass(oldClpSerializerClass.getName());
+
+				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
+						BaseModel.class);
+
+				Class<?> oldModelModelClass = oldModel.getModelClass();
+
+				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
+						oldModelModelClass.getSimpleName() + "RemoteModel");
+
+				Object oldRemoteModel = getRemoteModelMethod.invoke(oldModel);
+
+				BaseModel<?> newModel = (BaseModel<?>)translateOutputMethod.invoke(null,
+						oldRemoteModel);
+
+				return newModel;
+			}
+			catch (Throwable t) {
+				if (_log.isInfoEnabled()) {
+					_log.info("Unable to translate " + oldModelClassName, t);
+				}
+			}
+		}
+
+		if (oldModelClassName.equals(
+					"com.reply.liferay.exercise.model.model.impl.RifornimentoImpl")) {
+			return translateOutputRifornimento(oldModel);
+		}
+		else if (oldModelClassName.endsWith("Clp")) {
+			try {
+				ClassLoader classLoader = ClpSerializer.class.getClassLoader();
+
+				Method getClpSerializerClassMethod = oldModelClass.getMethod(
+						"getClpSerializerClass");
+
+				Class<?> oldClpSerializerClass = (Class<?>)getClpSerializerClassMethod.invoke(oldModel);
+
+				Class<?> newClpSerializerClass = classLoader.loadClass(oldClpSerializerClass.getName());
+
+				Method translateOutputMethod = newClpSerializerClass.getMethod("translateOutput",
+						BaseModel.class);
+
+				Class<?> oldModelModelClass = oldModel.getModelClass();
+
+				Method getRemoteModelMethod = oldModelClass.getMethod("get" +
+						oldModelModelClass.getSimpleName() + "RemoteModel");
+
+				Object oldRemoteModel = getRemoteModelMethod.invoke(oldModel);
+
+				BaseModel<?> newModel = (BaseModel<?>)translateOutputMethod.invoke(null,
+						oldRemoteModel);
+
+				return newModel;
+			}
+			catch (Throwable t) {
+				if (_log.isInfoEnabled()) {
+					_log.info("Unable to translate " + oldModelClassName, t);
+				}
+			}
+		}
+
+		if (oldModelClassName.equals(
+					"com.reply.liferay.exercise.model.model.impl.StazioneDiRifornimentoImpl")) {
+			return translateOutputStazioneDiRifornimento(oldModel);
 		}
 		else if (oldModelClassName.endsWith("Clp")) {
 			try {
@@ -266,29 +371,50 @@ public class ClpSerializer {
 		}
 
 		if (className.equals(
-					"com.reply.liferay.exercise.model.ClosedPumpExeptionException")) {
-			return new com.reply.liferay.exercise.model.ClosedPumpExeptionException();
+					"com.reply.liferay.exercise.model.NoSuchPompaException")) {
+			return new com.reply.liferay.exercise.model.NoSuchPompaException();
 		}
 
 		if (className.equals(
-					"com.reply.liferay.exercise.model.FuelEndedExepttionException")) {
-			return new com.reply.liferay.exercise.model.FuelEndedExepttionException();
+					"com.reply.liferay.exercise.model.NoSuchRifornimentoException")) {
+			return new com.reply.liferay.exercise.model.NoSuchRifornimentoException();
 		}
 
 		if (className.equals(
-					"com.reply.liferay.exercise.model.NoSuchFuelPumpException")) {
-			return new com.reply.liferay.exercise.model.NoSuchFuelPumpException();
+					"com.reply.liferay.exercise.model.NoSuchStazioneDiRifornimentoException")) {
+			return new com.reply.liferay.exercise.model.NoSuchStazioneDiRifornimentoException();
 		}
 
 		return throwable;
 	}
 
-	public static Object translateOutputFuelPump(BaseModel<?> oldModel) {
-		FuelPumpClp newModel = new FuelPumpClp();
+	public static Object translateOutputPompa(BaseModel<?> oldModel) {
+		PompaClp newModel = new PompaClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
-		newModel.setFuelPumpRemoteModel(oldModel);
+		newModel.setPompaRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputRifornimento(BaseModel<?> oldModel) {
+		RifornimentoClp newModel = new RifornimentoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setRifornimentoRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputStazioneDiRifornimento(
+		BaseModel<?> oldModel) {
+		StazioneDiRifornimentoClp newModel = new StazioneDiRifornimentoClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setStazioneDiRifornimentoRemoteModel(oldModel);
 
 		return newModel;
 	}
