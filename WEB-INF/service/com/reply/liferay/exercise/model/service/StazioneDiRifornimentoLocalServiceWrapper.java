@@ -374,18 +374,8 @@ public class StazioneDiRifornimentoLocalServiceWrapper
 	}
 
 	@Override
-	public float getPrezzoBenzina() {
-		return _stazioneDiRifornimentoLocalService.getPrezzoBenzina();
-	}
-
-	@Override
 	public void setPrezzoBenzina(float prezzoBenzina) {
 		_stazioneDiRifornimentoLocalService.setPrezzoBenzina(prezzoBenzina);
-	}
-
-	@Override
-	public float getPrezzoDiesel() {
-		return _stazioneDiRifornimentoLocalService.getPrezzoDiesel();
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(17);
+		StringBundler sb = new StringBundler(21);
 
 		sb.append("{uuid=");
 		sb.append(uuid);
@@ -56,6 +56,10 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 		sb.append(createDate);
 		sb.append(", modifiedDate=");
 		sb.append(modifiedDate);
+		sb.append(", prezzoBenzina=");
+		sb.append(prezzoBenzina);
+		sb.append(", prezzoDiesel=");
+		sb.append(prezzoDiesel);
 		sb.append("}");
 
 		return sb.toString();
@@ -98,6 +102,9 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 			stazioneDiRifornimentoImpl.setModifiedDate(new Date(modifiedDate));
 		}
 
+		stazioneDiRifornimentoImpl.setPrezzoBenzina(prezzoBenzina);
+		stazioneDiRifornimentoImpl.setPrezzoDiesel(prezzoDiesel);
+
 		stazioneDiRifornimentoImpl.resetOriginalValues();
 
 		return stazioneDiRifornimentoImpl;
@@ -113,6 +120,8 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 		userName = objectInput.readUTF();
 		createDate = objectInput.readLong();
 		modifiedDate = objectInput.readLong();
+		prezzoBenzina = objectInput.readInt();
+		prezzoDiesel = objectInput.readInt();
 	}
 
 	@Override
@@ -139,6 +148,8 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 
 		objectOutput.writeLong(createDate);
 		objectOutput.writeLong(modifiedDate);
+		objectOutput.writeInt(prezzoBenzina);
+		objectOutput.writeInt(prezzoDiesel);
 	}
 
 	public String uuid;
@@ -149,4 +160,6 @@ public class StazioneDiRifornimentoCacheModel implements CacheModel<StazioneDiRi
 	public String userName;
 	public long createDate;
 	public long modifiedDate;
+	public int prezzoBenzina;
+	public int prezzoDiesel;
 }

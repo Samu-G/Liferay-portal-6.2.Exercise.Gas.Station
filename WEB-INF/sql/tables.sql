@@ -102,5 +102,7 @@ create table SG_StazioneDiRifornimento (
 	userId LONG,
 	userName VARCHAR(75) null,
 	createDate DATE null,
-	modifiedDate DATE null
+	modifiedDate DATE null,
+	prezzoBenzina INTEGER,
+	prezzoDiesel INTEGER
 );

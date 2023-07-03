@@ -16,6 +16,8 @@
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
 		<column name="pompeDisponibili" type="Collection"></column>
+		<column name="prezzoBenzina" type="int"></column>
+		<column name="prezzoDiesel" type="int"></column>
 	</entity>
 	<entity name="Rifornimento" local-service="true">
 		<!-- PK fields -->

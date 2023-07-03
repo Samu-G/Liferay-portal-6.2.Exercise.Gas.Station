@@ -43,16 +43,8 @@ public class StazioneDiRifornimentoLocalServiceImpl
 	 */
 	
 	private boolean stationUpAndRunning;
-	private float prezzoBenzina;
-	private float prezzoDiesel;
 	private static int [] banconoteAccettate;
 	private static List<Pompa> pompeInstallate; 
-	
-	public StazioneDiRifornimentoLocalServiceImpl () {
-		this.banconoteAccettate = new int [] {5, 10, 20, 50, 100};
-		this.stationUpAndRunning = true;
-		this.pompeInstallate = new LinkedList();
-	}
 	
 	public void aggiuntaPompaDallAmministratore () {
 		
@@ -64,22 +56,6 @@ public class StazioneDiRifornimentoLocalServiceImpl
 
 	public void setStationUpAndRunning(boolean stationUpAndRunning) {
 		this.stationUpAndRunning = stationUpAndRunning;
-	}
-
-	public float getPrezzoBenzina() {
-		return prezzoBenzina;
-	}
-
-	public void setPrezzoBenzina(float prezzoBenzina) {
-		this.prezzoBenzina = prezzoBenzina;
-	}
-
-	public float getPrezzoDiesel() {
-		return prezzoDiesel;
-	}
-
-	public void setPrezzoDiesel(float prezzoDiesel) {
-		this.prezzoDiesel = prezzoDiesel;
 	}
 
 	public static int[] getBanconoteAccettate() {
@@ -96,6 +72,16 @@ public class StazioneDiRifornimentoLocalServiceImpl
 
 	public static void setPompeInstallate(List<Pompa> pompeInstallate) {
 		StazioneDiRifornimentoLocalServiceImpl.pompeInstallate = pompeInstallate;
+	}
+
+	@Override
+	public void setPrezzoBenzina(float prezzoBenzina) {
+		StazioneDiRifornimentoPersistenceImpl.
+	}
+
+	@Override
+	public void setPrezzoDiesel(float prezzoDiesel) {
+		
 	}
 	
 	

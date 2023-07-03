@@ -275,13 +275,10 @@ public class RifornimentoLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-<<<<<<< HEAD
 	public static boolean sbloccaRifornimento() {
 		return getService().sbloccaRifornimento();
 	}
 
-=======
->>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 	public static void clearService() {
 		_service = null;
 	}

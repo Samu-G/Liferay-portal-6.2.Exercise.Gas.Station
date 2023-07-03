@@ -1843,6 +1843,8 @@ public class StazioneDiRifornimentoPersistenceImpl extends BasePersistenceImpl<S
 		stazioneDiRifornimentoImpl.setUserName(stazioneDiRifornimento.getUserName());
 		stazioneDiRifornimentoImpl.setCreateDate(stazioneDiRifornimento.getCreateDate());
 		stazioneDiRifornimentoImpl.setModifiedDate(stazioneDiRifornimento.getModifiedDate());
+		stazioneDiRifornimentoImpl.setPrezzoBenzina(stazioneDiRifornimento.getPrezzoBenzina());
+		stazioneDiRifornimentoImpl.setPrezzoDiesel(stazioneDiRifornimento.getPrezzoDiesel());
 
 		return stazioneDiRifornimentoImpl;
 	}

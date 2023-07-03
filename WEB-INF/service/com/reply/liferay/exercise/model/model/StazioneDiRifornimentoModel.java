@@ -207,6 +207,34 @@ public interface StazioneDiRifornimentoModel extends BaseModel<StazioneDiRiforni
 	@Override
 	public void setModifiedDate(Date modifiedDate);
 
+	/**
+	 * Returns the prezzo benzina of this stazione di rifornimento.
+	 *
+	 * @return the prezzo benzina of this stazione di rifornimento
+	 */
+	public int getPrezzoBenzina();
+
+	/**
+	 * Sets the prezzo benzina of this stazione di rifornimento.
+	 *
+	 * @param prezzoBenzina the prezzo benzina of this stazione di rifornimento
+	 */
+	public void setPrezzoBenzina(int prezzoBenzina);
+
+	/**
+	 * Returns the prezzo diesel of this stazione di rifornimento.
+	 *
+	 * @return the prezzo diesel of this stazione di rifornimento
+	 */
+	public int getPrezzoDiesel();
+
+	/**
+	 * Sets the prezzo diesel of this stazione di rifornimento.
+	 *
+	 * @param prezzoDiesel the prezzo diesel of this stazione di rifornimento
+	 */
+	public void setPrezzoDiesel(int prezzoDiesel);
+
 	@Override
 	public boolean isNew();
 

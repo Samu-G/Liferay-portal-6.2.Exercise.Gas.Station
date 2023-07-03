@@ -130,49 +130,41 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 
 		_methodParameterTypes51 = new String[] { "java.lang.String" };
 
-		_methodName57 = "aggiuntaPompaDallAmministratore";
+		_methodName56 = "aggiuntaPompaDallAmministratore";
+
+		_methodParameterTypes56 = new String[] {  };
+
+		_methodName57 = "isStationUpAndRunning";
 
 		_methodParameterTypes57 = new String[] {  };
 
-		_methodName58 = "isStationUpAndRunning";
+		_methodName58 = "setStationUpAndRunning";
 
-		_methodParameterTypes58 = new String[] {  };
+		_methodParameterTypes58 = new String[] { "boolean" };
 
-		_methodName59 = "setStationUpAndRunning";
+		_methodName59 = "getBanconoteAccettate";
 
-		_methodParameterTypes59 = new String[] { "boolean" };
+		_methodParameterTypes59 = new String[] {  };
 
-		_methodName60 = "getPrezzoBenzina";
+		_methodName60 = "setBanconoteAccettate";
 
-		_methodParameterTypes60 = new String[] {  };
+		_methodParameterTypes60 = new String[] { "int[][]" };
 
-		_methodName61 = "setPrezzoBenzina";
+		_methodName61 = "getPompeInstallate";
 
-		_methodParameterTypes61 = new String[] { "float" };
+		_methodParameterTypes61 = new String[] {  };
 
-		_methodName62 = "getPrezzoDiesel";
+		_methodName62 = "setPompeInstallate";
 
-		_methodParameterTypes62 = new String[] {  };
+		_methodParameterTypes62 = new String[] { "java.util.List" };
 
-		_methodName63 = "setPrezzoDiesel";
+		_methodName63 = "setPrezzoBenzina";
 
 		_methodParameterTypes63 = new String[] { "float" };
 
-		_methodName64 = "getBanconoteAccettate";
+		_methodName64 = "setPrezzoDiesel";
 
-		_methodParameterTypes64 = new String[] {  };
-
-		_methodName65 = "setBanconoteAccettate";
-
-		_methodParameterTypes65 = new String[] { "int[][]" };
-
-		_methodName66 = "getPompeInstallate";
-
-		_methodParameterTypes66 = new String[] {  };
-
-		_methodName67 = "setPompeInstallate";
-
-		_methodParameterTypes67 = new String[] { "java.util.List" };
+		_methodParameterTypes64 = new String[] { "float" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -300,69 +292,59 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 			return null;
 		}
 
-		if (_methodName57.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
+		if (_methodName56.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
 			StazioneDiRifornimentoLocalServiceUtil.aggiuntaPompaDallAmministratore();
 
 			return null;
 		}
 
-		if (_methodName58.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
+		if (_methodName57.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
 			return StazioneDiRifornimentoLocalServiceUtil.isStationUpAndRunning();
 		}
 
-		if (_methodName59.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
+		if (_methodName58.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
 			StazioneDiRifornimentoLocalServiceUtil.setStationUpAndRunning(((Boolean)arguments[0]).booleanValue());
 
 			return null;
 		}
 
-		if (_methodName60.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getPrezzoBenzina();
+		if (_methodName59.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
+			return StazioneDiRifornimentoLocalServiceUtil.getBanconoteAccettate();
 		}
 
-		if (_methodName61.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes61, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setPrezzoBenzina(((Float)arguments[0]).floatValue());
+		if (_methodName60.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes60, parameterTypes)) {
+			StazioneDiRifornimentoLocalServiceUtil.setBanconoteAccettate((int[])arguments[0]);
 
 			return null;
 		}
 
+		if (_methodName61.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes61, parameterTypes)) {
+			return StazioneDiRifornimentoLocalServiceUtil.getPompeInstallate();
+		}
+
 		if (_methodName62.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getPrezzoDiesel();
+			StazioneDiRifornimentoLocalServiceUtil.setPompeInstallate((java.util.List<com.reply.liferay.exercise.model.model.Pompa>)arguments[0]);
+
+			return null;
 		}
 
 		if (_methodName63.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes63, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setPrezzoDiesel(((Float)arguments[0]).floatValue());
+			StazioneDiRifornimentoLocalServiceUtil.setPrezzoBenzina(((Float)arguments[0]).floatValue());
 
 			return null;
 		}
 
 		if (_methodName64.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getBanconoteAccettate();
-		}
-
-		if (_methodName65.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setBanconoteAccettate((int[])arguments[0]);
-
-			return null;
-		}
-
-		if (_methodName66.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
-			return StazioneDiRifornimentoLocalServiceUtil.getPompeInstallate();
-		}
-
-		if (_methodName67.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes67, parameterTypes)) {
-			StazioneDiRifornimentoLocalServiceUtil.setPompeInstallate((java.util.List<com.reply.liferay.exercise.model.model.Pompa>)arguments[0]);
+			StazioneDiRifornimentoLocalServiceUtil.setPrezzoDiesel(((Float)arguments[0]).floatValue());
 
 			return null;
 		}
@@ -414,6 +396,8 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes50;
 	private String _methodName51;
 	private String[] _methodParameterTypes51;
+	private String _methodName56;
+	private String[] _methodParameterTypes56;
 	private String _methodName57;
 	private String[] _methodParameterTypes57;
 	private String _methodName58;
@@ -430,10 +414,4 @@ public class StazioneDiRifornimentoLocalServiceClpInvoker {
 	private String[] _methodParameterTypes63;
 	private String _methodName64;
 	private String[] _methodParameterTypes64;
-	private String _methodName65;
-	private String[] _methodParameterTypes65;
-	private String _methodName66;
-	private String[] _methodParameterTypes66;
-	private String _methodName67;
-	private String[] _methodParameterTypes67;
 }

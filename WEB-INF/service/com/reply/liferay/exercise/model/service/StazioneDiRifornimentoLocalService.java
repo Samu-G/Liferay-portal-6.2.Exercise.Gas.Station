@@ -317,13 +317,7 @@ public interface StazioneDiRifornimentoLocalService extends BaseLocalService,
 
 	public void setStationUpAndRunning(boolean stationUpAndRunning);
 
-	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public float getPrezzoBenzina();
-
 	public void setPrezzoBenzina(float prezzoBenzina);
-
-	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public float getPrezzoDiesel();
 
 	public void setPrezzoDiesel(float prezzoDiesel);
 }

@@ -60,6 +60,8 @@ public class StazioneDiRifornimentoWrapper implements StazioneDiRifornimento,
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("prezzoBenzina", getPrezzoBenzina());
+		attributes.put("prezzoDiesel", getPrezzoDiesel());
 
 		return attributes;
 	}
@@ -113,6 +115,18 @@ public class StazioneDiRifornimentoWrapper implements StazioneDiRifornimento,
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Integer prezzoBenzina = (Integer)attributes.get("prezzoBenzina");
+
+		if (prezzoBenzina != null) {
+			setPrezzoBenzina(prezzoBenzina);
+		}
+
+		Integer prezzoDiesel = (Integer)attributes.get("prezzoDiesel");
+
+		if (prezzoDiesel != null) {
+			setPrezzoDiesel(prezzoDiesel);
 		}
 	}
 
@@ -316,6 +330,46 @@ public class StazioneDiRifornimentoWrapper implements StazioneDiRifornimento,
 	@Override
 	public void setModifiedDate(java.util.Date modifiedDate) {
 		_stazioneDiRifornimento.setModifiedDate(modifiedDate);
+	}
+
+	/**
+	* Returns the prezzo benzina of this stazione di rifornimento.
+	*
+	* @return the prezzo benzina of this stazione di rifornimento
+	*/
+	@Override
+	public int getPrezzoBenzina() {
+		return _stazioneDiRifornimento.getPrezzoBenzina();
+	}
+
+	/**
+	* Sets the prezzo benzina of this stazione di rifornimento.
+	*
+	* @param prezzoBenzina the prezzo benzina of this stazione di rifornimento
+	*/
+	@Override
+	public void setPrezzoBenzina(int prezzoBenzina) {
+		_stazioneDiRifornimento.setPrezzoBenzina(prezzoBenzina);
+	}
+
+	/**
+	* Returns the prezzo diesel of this stazione di rifornimento.
+	*
+	* @return the prezzo diesel of this stazione di rifornimento
+	*/
+	@Override
+	public int getPrezzoDiesel() {
+		return _stazioneDiRifornimento.getPrezzoDiesel();
+	}
+
+	/**
+	* Sets the prezzo diesel of this stazione di rifornimento.
+	*
+	* @param prezzoDiesel the prezzo diesel of this stazione di rifornimento
+	*/
+	@Override
+	public void setPrezzoDiesel(int prezzoDiesel) {
+		_stazioneDiRifornimento.setPrezzoDiesel(prezzoDiesel);
 	}
 
 	@Override

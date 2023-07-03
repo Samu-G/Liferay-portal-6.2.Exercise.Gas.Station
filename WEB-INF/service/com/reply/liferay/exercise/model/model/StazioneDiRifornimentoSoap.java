@@ -40,6 +40,8 @@ public class StazioneDiRifornimentoSoap implements Serializable {
 		soapModel.setUserName(model.getUserName());
 		soapModel.setCreateDate(model.getCreateDate());
 		soapModel.setModifiedDate(model.getModifiedDate());
+		soapModel.setPrezzoBenzina(model.getPrezzoBenzina());
+		soapModel.setPrezzoDiesel(model.getPrezzoDiesel());
 
 		return soapModel;
 	}
@@ -159,6 +161,22 @@ public class StazioneDiRifornimentoSoap implements Serializable {
 		_modifiedDate = modifiedDate;
 	}
 
+	public int getPrezzoBenzina() {
+		return _prezzoBenzina;
+	}
+
+	public void setPrezzoBenzina(int prezzoBenzina) {
+		_prezzoBenzina = prezzoBenzina;
+	}
+
+	public int getPrezzoDiesel() {
+		return _prezzoDiesel;
+	}
+
+	public void setPrezzoDiesel(int prezzoDiesel) {
+		_prezzoDiesel = prezzoDiesel;
+	}
+
 	private String _uuid;
 	private long _stazioneDiRifornimentoId;
 	private long _groupId;
@@ -167,4 +185,6 @@ public class StazioneDiRifornimentoSoap implements Serializable {
 	private String _userName;
 	private Date _createDate;
 	private Date _modifiedDate;
+	private int _prezzoBenzina;
+	private int _prezzoDiesel;
 }

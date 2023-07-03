@@ -14,6 +14,13 @@
 
 package com.reply.liferay.exercise.model.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.reply.liferay.exercise.model.service.StazioneDiRifornimentoServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.reply.liferay.exercise.model.service.StazioneDiRifornimentoServiceUtil} service utility. The
@@ -55,4 +62,67 @@ package com.reply.liferay.exercise.model.service.http;
  * @generated
  */
 public class StazioneDiRifornimentoServiceSoap {
+	public static java.lang.String getPrezzoBenzina() throws RemoteException {
+		try {
+			java.lang.String returnValue = StazioneDiRifornimentoServiceUtil.getPrezzoBenzina();
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static java.lang.String getPrezzoDiesel() throws RemoteException {
+		try {
+			java.lang.String returnValue = StazioneDiRifornimentoServiceUtil.getPrezzoDiesel();
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void aggiungiDenaro(int denaroDaAggiungere)
+		throws RemoteException {
+		try {
+			StazioneDiRifornimentoServiceUtil.aggiungiDenaro(denaroDaAggiungere);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static java.lang.String getDenaro() throws RemoteException {
+		try {
+			java.lang.String returnValue = StazioneDiRifornimentoServiceUtil.getDenaro();
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void reset() throws RemoteException {
+		try {
+			StazioneDiRifornimentoServiceUtil.reset();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(StazioneDiRifornimentoServiceSoap.class);
 }

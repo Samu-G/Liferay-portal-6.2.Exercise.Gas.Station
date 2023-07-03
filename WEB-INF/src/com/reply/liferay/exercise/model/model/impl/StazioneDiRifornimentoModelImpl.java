@@ -74,9 +74,11 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 			{ "userId", Types.BIGINT },
 			{ "userName", Types.VARCHAR },
 			{ "createDate", Types.TIMESTAMP },
-			{ "modifiedDate", Types.TIMESTAMP }
+			{ "modifiedDate", Types.TIMESTAMP },
+			{ "prezzoBenzina", Types.INTEGER },
+			{ "prezzoDiesel", Types.INTEGER }
 		};
-	public static final String TABLE_SQL_CREATE = "create table SG_StazioneDiRifornimento (uuid_ VARCHAR(75) null,stazioneDiRifornimentoId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table SG_StazioneDiRifornimento (uuid_ VARCHAR(75) null,stazioneDiRifornimentoId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,prezzoBenzina INTEGER,prezzoDiesel INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table SG_StazioneDiRifornimento";
 	public static final String ORDER_BY_JPQL = " ORDER BY stazioneDiRifornimento.stazioneDiRifornimentoId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY SG_StazioneDiRifornimento.stazioneDiRifornimentoId ASC";
@@ -119,6 +121,8 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 		model.setUserName(soapModel.getUserName());
 		model.setCreateDate(soapModel.getCreateDate());
 		model.setModifiedDate(soapModel.getModifiedDate());
+		model.setPrezzoBenzina(soapModel.getPrezzoBenzina());
+		model.setPrezzoDiesel(soapModel.getPrezzoDiesel());
 
 		return model;
 	}
@@ -192,6 +196,8 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("prezzoBenzina", getPrezzoBenzina());
+		attributes.put("prezzoDiesel", getPrezzoDiesel());
 
 		return attributes;
 	}
@@ -245,6 +251,18 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Integer prezzoBenzina = (Integer)attributes.get("prezzoBenzina");
+
+		if (prezzoBenzina != null) {
+			setPrezzoBenzina(prezzoBenzina);
+		}
+
+		Integer prezzoDiesel = (Integer)attributes.get("prezzoDiesel");
+
+		if (prezzoDiesel != null) {
+			setPrezzoDiesel(prezzoDiesel);
 		}
 	}
 
@@ -388,6 +406,28 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 		_modifiedDate = modifiedDate;
 	}
 
+	@JSON
+	@Override
+	public int getPrezzoBenzina() {
+		return _prezzoBenzina;
+	}
+
+	@Override
+	public void setPrezzoBenzina(int prezzoBenzina) {
+		_prezzoBenzina = prezzoBenzina;
+	}
+
+	@JSON
+	@Override
+	public int getPrezzoDiesel() {
+		return _prezzoDiesel;
+	}
+
+	@Override
+	public void setPrezzoDiesel(int prezzoDiesel) {
+		_prezzoDiesel = prezzoDiesel;
+	}
+
 	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
@@ -433,6 +473,8 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 		stazioneDiRifornimentoImpl.setUserName(getUserName());
 		stazioneDiRifornimentoImpl.setCreateDate(getCreateDate());
 		stazioneDiRifornimentoImpl.setModifiedDate(getModifiedDate());
+		stazioneDiRifornimentoImpl.setPrezzoBenzina(getPrezzoBenzina());
+		stazioneDiRifornimentoImpl.setPrezzoDiesel(getPrezzoDiesel());
 
 		stazioneDiRifornimentoImpl.resetOriginalValues();
 
@@ -544,12 +586,16 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 			stazioneDiRifornimentoCacheModel.modifiedDate = Long.MIN_VALUE;
 		}
 
+		stazioneDiRifornimentoCacheModel.prezzoBenzina = getPrezzoBenzina();
+
+		stazioneDiRifornimentoCacheModel.prezzoDiesel = getPrezzoDiesel();
+
 		return stazioneDiRifornimentoCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(17);
+		StringBundler sb = new StringBundler(21);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -567,6 +613,10 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 		sb.append(getCreateDate());
 		sb.append(", modifiedDate=");
 		sb.append(getModifiedDate());
+		sb.append(", prezzoBenzina=");
+		sb.append(getPrezzoBenzina());
+		sb.append(", prezzoDiesel=");
+		sb.append(getPrezzoDiesel());
 		sb.append("}");
 
 		return sb.toString();
@@ -574,7 +624,7 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(28);
+		StringBundler sb = new StringBundler(34);
 
 		sb.append("<model><model-name>");
 		sb.append(
@@ -613,6 +663,14 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 			"<column><column-name>modifiedDate</column-name><column-value><![CDATA[");
 		sb.append(getModifiedDate());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>prezzoBenzina</column-name><column-value><![CDATA[");
+		sb.append(getPrezzoBenzina());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>prezzoDiesel</column-name><column-value><![CDATA[");
+		sb.append(getPrezzoDiesel());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -637,6 +695,8 @@ public class StazioneDiRifornimentoModelImpl extends BaseModelImpl<StazioneDiRif
 	private String _userName;
 	private Date _createDate;
 	private Date _modifiedDate;
+	private int _prezzoBenzina;
+	private int _prezzoDiesel;
 	private long _columnBitmask;
 	private StazioneDiRifornimento _escapedModel;
 }

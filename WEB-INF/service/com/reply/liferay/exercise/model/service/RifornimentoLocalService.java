@@ -253,9 +253,6 @@ public interface RifornimentoLocalService extends BaseLocalService,
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
-<<<<<<< HEAD
 
 	public boolean sbloccaRifornimento();
-=======
->>>>>>> 57d62af87a7cb366c4a3ccfc5ecdd86fe645dbc4
 }

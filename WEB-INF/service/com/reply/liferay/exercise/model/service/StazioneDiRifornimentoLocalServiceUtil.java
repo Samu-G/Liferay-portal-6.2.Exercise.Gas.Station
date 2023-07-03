@@ -354,16 +354,8 @@ public class StazioneDiRifornimentoLocalServiceUtil {
 		getService().setStationUpAndRunning(stationUpAndRunning);
 	}
 
-	public static float getPrezzoBenzina() {
-		return getService().getPrezzoBenzina();
-	}
-
 	public static void setPrezzoBenzina(float prezzoBenzina) {
 		getService().setPrezzoBenzina(prezzoBenzina);
-	}
-
-	public static float getPrezzoDiesel() {
-		return getService().getPrezzoDiesel();
 	}
 
 	public static void setPrezzoDiesel(float prezzoDiesel) {

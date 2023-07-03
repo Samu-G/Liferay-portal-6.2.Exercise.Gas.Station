@@ -84,6 +84,8 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
 		attributes.put("modifiedDate", getModifiedDate());
+		attributes.put("prezzoBenzina", getPrezzoBenzina());
+		attributes.put("prezzoDiesel", getPrezzoDiesel());
 
 		return attributes;
 	}
@@ -137,6 +139,18 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 
 		if (modifiedDate != null) {
 			setModifiedDate(modifiedDate);
+		}
+
+		Integer prezzoBenzina = (Integer)attributes.get("prezzoBenzina");
+
+		if (prezzoBenzina != null) {
+			setPrezzoBenzina(prezzoBenzina);
+		}
+
+		Integer prezzoDiesel = (Integer)attributes.get("prezzoDiesel");
+
+		if (prezzoDiesel != null) {
+			setPrezzoDiesel(prezzoDiesel);
 		}
 	}
 
@@ -337,6 +351,52 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 	}
 
 	@Override
+	public int getPrezzoBenzina() {
+		return _prezzoBenzina;
+	}
+
+	@Override
+	public void setPrezzoBenzina(int prezzoBenzina) {
+		_prezzoBenzina = prezzoBenzina;
+
+		if (_stazioneDiRifornimentoRemoteModel != null) {
+			try {
+				Class<?> clazz = _stazioneDiRifornimentoRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setPrezzoBenzina", int.class);
+
+				method.invoke(_stazioneDiRifornimentoRemoteModel, prezzoBenzina);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getPrezzoDiesel() {
+		return _prezzoDiesel;
+	}
+
+	@Override
+	public void setPrezzoDiesel(int prezzoDiesel) {
+		_prezzoDiesel = prezzoDiesel;
+
+		if (_stazioneDiRifornimentoRemoteModel != null) {
+			try {
+				Class<?> clazz = _stazioneDiRifornimentoRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setPrezzoDiesel", int.class);
+
+				method.invoke(_stazioneDiRifornimentoRemoteModel, prezzoDiesel);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
 	public StagedModelType getStagedModelType() {
 		return new StagedModelType(PortalUtil.getClassNameId(
 				StazioneDiRifornimento.class.getName()));
@@ -421,6 +481,8 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 		clone.setUserName(getUserName());
 		clone.setCreateDate(getCreateDate());
 		clone.setModifiedDate(getModifiedDate());
+		clone.setPrezzoBenzina(getPrezzoBenzina());
+		clone.setPrezzoDiesel(getPrezzoDiesel());
 
 		return clone;
 	}
@@ -473,7 +535,7 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(17);
+		StringBundler sb = new StringBundler(21);
 
 		sb.append("{uuid=");
 		sb.append(getUuid());
@@ -491,6 +553,10 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 		sb.append(getCreateDate());
 		sb.append(", modifiedDate=");
 		sb.append(getModifiedDate());
+		sb.append(", prezzoBenzina=");
+		sb.append(getPrezzoBenzina());
+		sb.append(", prezzoDiesel=");
+		sb.append(getPrezzoDiesel());
 		sb.append("}");
 
 		return sb.toString();
@@ -498,7 +564,7 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(28);
+		StringBundler sb = new StringBundler(34);
 
 		sb.append("<model><model-name>");
 		sb.append(
@@ -537,6 +603,14 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 			"<column><column-name>modifiedDate</column-name><column-value><![CDATA[");
 		sb.append(getModifiedDate());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>prezzoBenzina</column-name><column-value><![CDATA[");
+		sb.append(getPrezzoBenzina());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>prezzoDiesel</column-name><column-value><![CDATA[");
+		sb.append(getPrezzoDiesel());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -552,6 +626,8 @@ public class StazioneDiRifornimentoClp extends BaseModelImpl<StazioneDiRifornime
 	private String _userName;
 	private Date _createDate;
 	private Date _modifiedDate;
+	private int _prezzoBenzina;
+	private int _prezzoDiesel;
 	private BaseModel<?> _stazioneDiRifornimentoRemoteModel;
 	private Class<?> _clpSerializerClass = com.reply.liferay.exercise.model.service.ClpSerializer.class;
 }
